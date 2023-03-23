@@ -4,6 +4,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
+import { UserController } from './user.controller';
+import { UserService } from './user.service';
 import { User } from './entities/user.entity';
 import { CommonModule } from 'src/common/common.module';
 import { JwtStrategy } from './strategies/jwt.strategy';
@@ -26,7 +28,8 @@ import { JwtStrategy } from './strategies/jwt.strategy';
       },
     }),
   ],
-  controllers: [AuthController],
-  providers: [AuthService, JwtStrategy],
+  controllers: [AuthController, UserController],
+  providers: [AuthService, UserService, JwtStrategy],
+  exports: [AuthService, TypeOrmModule, UserService],
 })
 export class AuthModule {}
