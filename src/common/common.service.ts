@@ -12,4 +12,12 @@ export class CommonService {
     console.error(error);
     throw new InternalServerErrorException('Please check server logs');
   }
+
+  checkUrl(url: string): URL {
+    try {
+      return new URL(url);
+    } catch (error) {
+      throw new BadRequestException('The format URL is incorrect');
+    }
+  }
 }
