@@ -4,16 +4,16 @@ export const users: createUserInterface[] = [
   {
     username: 'Ayse Bollat',
     email: 'Ayse_Bollat@gmail.com',
-    password: 'k213kusbq',
+    password: 'k213//ADkusbq',
   },
   {
     username: 'Ai Do',
     email: 'Ai_Do@gmail.com',
-    password: '219312msahjasd77sdka',
+    password: '21DSERT12msahjasd77sdka',
   },
   {
     username: 'Agua Cate',
     email: 'Agua.Cate@gmail.com',
-    password: 'lmp9127nnsa6///',
+    password: 'lmp9127ADSAnsa6///',
   },
 ];
