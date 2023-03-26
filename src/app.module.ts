@@ -4,6 +4,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { schemaValidation } from './config/validation.config';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
+import { SeedModule } from './seed/seed.module';
+import { LinkModule } from './link/link.module';
+import { ApisModule } from './apis/apis.module';
 
 @Module({
   imports: [
@@ -22,6 +25,9 @@ import { CommonModule } from './common/common.module';
     }),
     AuthModule,
     CommonModule,
+    SeedModule,
+    LinkModule,
+    ApisModule,
   ],
   controllers: [],
   providers: [],
