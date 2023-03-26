@@ -15,7 +15,5 @@ export const schemaValidation = joi.object({
   JWT_SECRET: joi.string().required(),
   JWT_EXPIRES: joi.string().default('2d').required(),
   UNSPLASH_KEY: joi.string().required(),
-  SWAGGER_TITLE: joi.string().required(),
-  SWAGGER_DESCRIPTION: joi.string().required(),
   SWAGGER_VERSION: joi.string().required().default('1.0'),
 });

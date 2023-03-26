@@ -11,11 +11,6 @@ Web service associated with the link manager project, in charge of managing the 
 ## Execute in development
 
 1. Clone project
-
-```
-https://github.com/camiloJTG/Exams-Management-Rest-Service.git
-```
-
 2. Install dependencies
 
 ```
