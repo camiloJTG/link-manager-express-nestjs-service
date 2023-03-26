@@ -11,11 +11,12 @@ import {
 
 export class CreateLinkDto {
   @ApiProperty({
-    type: 'text',
+    type: 'string',
     minLength: 1,
     maxLength: 50,
     required: true,
     description: 'title of the link to be saved',
+    example: 'Youtube',
   })
   @IsString()
   @MaxLength(50)
@@ -32,11 +33,12 @@ export class CreateLinkDto {
   url: string;
 
   @ApiProperty({
-    type: 'text',
+    type: 'string',
     minLength: 10,
     maxLength: 50,
     required: false,
     description: 'Brief description of the saved link',
+    example: 'Link to watch at night :D',
   })
   @IsString()
   @IsOptional()
@@ -56,6 +58,7 @@ export class CreateLinkDto {
     type: 'uuid',
     required: true,
     description: 'uuid of the user who saves the link',
+    example: '123e4567-e89b-12d3-a456-426614174000',
   })
   @IsString()
   @IsUUID()
