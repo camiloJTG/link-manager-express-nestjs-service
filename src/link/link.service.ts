@@ -7,6 +7,7 @@ import { Link } from './entities/link.entity';
 import { UnsplahService } from 'src/apis/unsplash.service';
 import { CommonService } from 'src/common/common.service';
 import { UserService } from 'src/auth/user.service';
+import { PaginationDto } from 'src/common/dto/pagination.dto';
 
 @Injectable()
 export class LinkService {
@@ -41,10 +42,16 @@ export class LinkService {
     }
   }
 
-  async findAllByUser(userId: string): Promise<Link[]> {
+  async findAllByUser(
+    userId: string,
+    paginationDto: PaginationDto,
+  ): Promise<Link[]> {
+    const { limit = 10, offset = 1 } = paginationDto;
     const links = await this.linkRepository
       .createQueryBuilder('link')
       .where('link.userId =:userId', { userId })
+      .take(limit)
+      .skip(offset)
       .getMany();
     if (links.length === 0) throw new NotFoundException('Links not found');
     return links;
