@@ -10,8 +10,8 @@ async function bootstrap() {
   const config = app.get(ConfigService);
 
   const swagger = new DocumentBuilder()
-    .setTitle(config.get<string>('SWAGGER_TITLE'))
-    .setDescription(config.get<string>('SWAGGER_DESCRIPTION'))
+    .setTitle('link-manager-rest-service')
+    .setDescription('Rest api for link manager project')
     .setVersion(config.get<string>('SWAGGER_VERSION'))
     .addBearerAuth()
     .build();
