@@ -3,7 +3,6 @@ import * as joi from 'joi';
 export const schemaValidation = joi.object({
   PORT: joi.number().default(3000).required(),
   NODE_DEV: joi.string().default('dev').required(),
-  CORS_ORIGIN: joi.string().required(),
   DB_HOST: joi.string().default('localhost').required(),
   DB_USER: joi.string().default('development').required(),
   DB_PASSWORD: joi.string().default('local123xdt').required(),
