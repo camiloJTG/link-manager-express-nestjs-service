@@ -1,23 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { createApi } from 'unsplash-js';
+import axios from 'axios';
 
 @Injectable()
 export class UnsplahService {
   accessKey = this.configService.get<string>('UNSPLASH_KEY');
+  baseUrl = this.configService.get<string>('UNSPLASH_URL');
 
   constructor(private readonly configService: ConfigService) {}
 
-  private configuration() {
-    const unsplash = createApi({
-      accessKey: this.accessKey,
-    });
-    return unsplash;
-  }
-
   async getRandomImage(): Promise<string> {
-    const { photos } = this.configuration();
-    const { response } = await photos.getRandom({ count: 1 });
-    return response[0].urls.regular;
+    const resp = await axios.get(
+      `${this.baseUrl}/photos/random?client_id=${this.accessKey}`,
+    );
+    const { data } = resp;
+    console.log(data.urls);
+    return data.urls.regular;
   }
 }
