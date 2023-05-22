@@ -14,7 +14,6 @@ export class UnsplahService {
       `${this.baseUrl}/photos/random?client_id=${this.accessKey}`,
     );
     const { data } = resp;
-    console.log(data.urls);
     return data.urls.regular;
   }
 }
