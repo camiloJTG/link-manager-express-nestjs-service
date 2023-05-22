@@ -1,6 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
-  IsBoolean,
   IsOptional,
   IsString,
   IsUrl,
@@ -45,14 +44,6 @@ export class CreateLinkDto {
   @MaxLength(50)
   @MinLength(10)
   description: string;
-
-  @ApiProperty({
-    type: 'boolean',
-    required: true,
-    description: 'If its a favorite link or not',
-  })
-  @IsBoolean()
-  isFavorite: boolean;
 
   @ApiProperty({
     type: 'uuid',

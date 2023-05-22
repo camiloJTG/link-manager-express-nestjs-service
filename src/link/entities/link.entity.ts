@@ -22,9 +22,6 @@ export class Link {
   @Column({ type: 'text', nullable: true })
   description: string;
 
-  @Column({ type: 'bool', default: false })
-  isFavorite: boolean;
-
   @Column('text')
   domain: string;
 
