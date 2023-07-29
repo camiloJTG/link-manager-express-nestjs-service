@@ -10,6 +10,7 @@ export const schemaValidation = joi.object({
   DB_PORT: joi.number().default(5432).required(),
   DB_AUTOLOAD: joi.boolean().default(true).required(),
   DB_SYNCRO: joi.boolean().default(true).required(),
+  DB_SCHEMA: joi.string().required(),
   HASH_SALT: joi.number().default(10).required(),
   JWT_SECRET: joi.string().required(),
   JWT_EXPIRES: joi.string().default('2d').required(),

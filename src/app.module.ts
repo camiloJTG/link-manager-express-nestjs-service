@@ -20,6 +20,7 @@ import { ApisModule } from './apis/apis.module';
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
+      schema: process.env.DB_SCHEMA,
       synchronize: Boolean(process.env.DB_SYNCRO),
       autoLoadEntities: Boolean(process.env.DB_AUTOLOAD),
     }),
